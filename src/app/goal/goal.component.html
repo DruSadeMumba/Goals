@@ -13,6 +13,7 @@
           </div>
         </div>
         <div *ngIf='goal.showDescription'>
+          <app-vote></app-vote>
           <app-goaldetail  [goal]='goal' (isComplete) = 'deleteGoal($event,i)'></app-goaldetail>
         </div><br>
       </div>
