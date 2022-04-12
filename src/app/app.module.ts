@@ -8,11 +8,8 @@ import { StrikethroughDirective } from './strikethrough.directive';
 import { DateCountPipe } from './date-count.pipe';
 import { GoalFormComponent } from './goal-form/goal-form.component';
 import { FormsModule } from '@angular/forms';
-<<<<<<< HEAD
 import { GoalService } from './goal-service/goal.service';
-=======
-import { VoteComponent } from './goal/vote/vote.component';
->>>>>>> badfdd5d4e751e8724b6251c2011403292ff6403
+
 
 @NgModule({
   declarations: [
@@ -22,7 +19,6 @@ import { VoteComponent } from './goal/vote/vote.component';
     StrikethroughDirective,
     DateCountPipe,
     GoalFormComponent,
-    VoteComponent
   ],
   imports: [
     BrowserModule,
