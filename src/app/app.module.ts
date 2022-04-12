@@ -10,7 +10,6 @@ import { GoalFormComponent } from './goal-form/goal-form.component';
 import { FormsModule } from '@angular/forms';
 import { GoalService } from './goal-service/goal.service';
 import { HttpClientModule } from '@angular/common/http';
-import { QuoteComponent } from './quote-class/quote/quote.component';
 
 
 @NgModule({
@@ -21,7 +20,6 @@ import { QuoteComponent } from './quote-class/quote/quote.component';
     StrikethroughDirective,
     DateCountPipe,
     GoalFormComponent,
-    QuoteComponent,
   ],
   imports: [
     BrowserModule,

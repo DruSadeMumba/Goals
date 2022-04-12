@@ -21,5 +21,13 @@
       <app-goal-form (addGoal1)= "addNewGoal1 ($event)"></app-goal-form>
     </div>
   </div><br>
-  <p *ngIf='goals.length > 5'>You have too many goals</p>
+  <div>
+    <p *ngIf='goals.length > 5'>You have too many goals</p>
+  </div>
+  <div class="row">
+    <blockquote class="blockquote text-center">
+      <p class="mb-0">{{quote.quote}}</p>
+      <footer class="blockquote-footer"><cite>{{quote.author}}</cite></footer>
+    </blockquote>
+  </div>
 </div>
