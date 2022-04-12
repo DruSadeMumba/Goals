@@ -6,7 +6,7 @@ import { Goal1 } from 'src/app/goal1';
   templateUrl: './goaldetail.component.html',
   styleUrls: ['./goaldetail.component.css']
 })
-export class GoaldetailComponent implements OnInit {
+export class GoaldetailComponent implements OnInit { 
 
   @Input()
   goal!: Goal1;
