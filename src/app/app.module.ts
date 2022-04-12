@@ -9,6 +9,7 @@ import { DateCountPipe } from './date-count.pipe';
 import { GoalFormComponent } from './goal-form/goal-form.component';
 import { FormsModule } from '@angular/forms';
 import { GoalService } from './goal-service/goal.service';
+import { HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({
@@ -23,7 +24,8 @@ import { GoalService } from './goal-service/goal.service';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule,
   ],
   providers: [GoalService],
   bootstrap: [AppComponent]
