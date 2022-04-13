@@ -10,7 +10,8 @@ import { GoalFormComponent } from './goal-form/goal-form.component';
 import { FormsModule } from '@angular/forms';
 import { GoalService } from './goal-service/goal.service';
 import { HttpClientModule } from '@angular/common/http';
-import { ProgressBarModule } from 'angular-progress-bar'; 
+import { ProgressBarModule } from 'angular-progress-bar';
+import { AboutComponent } from './about/about.component'; 
 
 @NgModule({
   declarations: [
@@ -20,6 +21,7 @@ import { ProgressBarModule } from 'angular-progress-bar';
     StrikethroughDirective,
     DateCountPipe,
     GoalFormComponent,
+    AboutComponent,
   ],
   imports: [
     BrowserModule,
