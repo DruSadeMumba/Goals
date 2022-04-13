@@ -11,7 +11,8 @@ import { FormsModule } from '@angular/forms';
 import { GoalService } from './goal-service/goal.service';
 import { HttpClientModule } from '@angular/common/http';
 import { ProgressBarModule } from 'angular-progress-bar';
-import { AboutComponent } from './about/about.component'; 
+import { AboutComponent } from './about/about.component';
+import { NavbarComponent } from './navbar/navbar.component'; 
 
 @NgModule({
   declarations: [
@@ -22,6 +23,7 @@ import { AboutComponent } from './about/about.component';
     DateCountPipe,
     GoalFormComponent,
     AboutComponent,
+    NavbarComponent,
   ],
   imports: [
     BrowserModule,
