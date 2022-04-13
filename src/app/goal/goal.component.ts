@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { AlertService } from '../alert-service/alert.service';
 import { GoalService } from '../goal-service/goal.service';
+import { QuoteRequestService } from '../quote-http/quote-request.service';
 import { Goal1 } from '../goal1';
 import { Quote } from '../quote-class/quote';
 
@@ -40,13 +41,15 @@ export class GoalComponent implements OnInit {
     }
   }
   
-  constructor(goalService:GoalService, alertServices:AlertService, private http:HttpClient) {
+  constructor(goalService:GoalService, alertServices:AlertService, private http:HttpClient, private quoteService:QuoteRequestService) {
     this.goals = goalService.getGoals();
     this.alertServices = alertServices;
     
   }
 
   ngOnInit(): void {
+    this.quoteService.quoteRequest()
+    this.quote = this.quoteService.quote
     interface ApiResponse{
       author:string;
       quote:string;
@@ -57,7 +60,7 @@ export class GoalComponent implements OnInit {
     },err=>{
       this.quote = new Quote("Winston Churchill","Never never give up!")
       console.log("An error occurred")
-  })
+  }) 
   }
 
 }
