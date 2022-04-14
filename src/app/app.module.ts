@@ -13,6 +13,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { ProgressBarModule } from 'angular-progress-bar';
 import { AboutComponent } from './about/about.component';
 import { NavbarComponent } from './navbar/navbar.component';
+import { NotFoundComponent } from './not-found/not-found.component';
 
 @NgModule({
   declarations: [
@@ -24,6 +25,7 @@ import { NavbarComponent } from './navbar/navbar.component';
     GoalFormComponent,
     AboutComponent,
     NavbarComponent,
+    NotFoundComponent,
   ],
   imports: [
     BrowserModule,
