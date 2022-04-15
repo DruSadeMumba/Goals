@@ -1,10 +1,7 @@
-import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { AlertService } from '../alert-service/alert.service';
 import { GoalService } from '../goal-service/goal.service';
-import { QuoteRequestService } from '../quote-http/quote-request.service';
 import { Goal1 } from '../goal1';
-import { Quote } from '../quote-class/quote';
 import { Router } from '@angular/router';
 
 
@@ -18,7 +15,7 @@ export class GoalComponent implements OnInit {
  
   goals: Goal1[];
   alertServices: AlertService;
-  quote!:Quote;
+ 
   
   addNewGoal1(goal: Goal1){
     let goalLength = this.goals.length;
@@ -46,27 +43,14 @@ export class GoalComponent implements OnInit {
     }
   }
   
-  constructor(goalService:GoalService, alertServices:AlertService, private http:HttpClient, private quoteService:QuoteRequestService, private router:Router) {
+  constructor(goalService:GoalService, alertServices:AlertService,  private router:Router) {
     this.goals = goalService.getGoals();
     this.alertServices = alertServices;
     
   }
 
   ngOnInit(): void {
-    this.quoteService.quoteRequest()
-    this.quote = this.quoteService.quote
-    interface ApiResponse{
-      author:string;
-      quote:string;
-    }
-
-    this.http.get<ApiResponse>("http://quotes.stormconsultancy.co.uk/random.json").subscribe(data=>{
-      this.quote = new Quote(data.author, data.quote)
-    },err=>{
-      this.quote = new Quote("Winston Churchill","Never never give up!")
-      console.log("An error occurred")
-  }) 
- 
+    
   }
 
 }
