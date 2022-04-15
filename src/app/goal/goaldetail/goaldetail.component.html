@@ -1,3 +1,21 @@
-<p id="gdescription">{{goal.description}}</p>
+<!-- <p id="gdescription">{{goal.description}}</p>
 <p id="gdate">{{goal.completeDate|dateCount}}</p>
-<button (click)="goalDelete(true) "class="btn btn-outline-danger" id="deletebtn">Delete Goal</button>
+<button (click)="goalDelete(true) "class="btn btn-outline-danger" id="deletebtn">Delete Goal</button> -->
+<div class="container">
+  <div class="row">
+    <div class="col-md-2">
+
+    </div>
+    <div class="col-md-8">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title" id="gdescription">{{goal.description}}</h5>
+          <p class="card-text" id="gdate">{{goal.completeDate|dateCount}}</p>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-2">
+
+    </div>
+  </div>
+</div>

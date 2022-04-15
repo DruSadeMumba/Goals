@@ -5,6 +5,7 @@ import { GoalService } from '../goal-service/goal.service';
 import { QuoteRequestService } from '../quote-http/quote-request.service';
 import { Goal1 } from '../goal1';
 import { Quote } from '../quote-class/quote';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -26,9 +27,13 @@ export class GoalComponent implements OnInit {
     this.goals.push(goal);
   }
 
-  toggleDetails(index: number): void{
-    this.goals[index].showDescription = !this.goals[index].showDescription;
+  goToUrl(id: number){
+    this.router.navigate(['/goals',id])
   }
+
+  /* toggleDetails(index: number): void{
+    this.goals[index].showDescription = !this.goals[index].showDescription;
+  } */
 
   deleteGoal(isComplete: any, index: number){
     if (isComplete) {
@@ -41,7 +46,7 @@ export class GoalComponent implements OnInit {
     }
   }
   
-  constructor(goalService:GoalService, alertServices:AlertService, private http:HttpClient, private quoteService:QuoteRequestService) {
+  constructor(goalService:GoalService, alertServices:AlertService, private http:HttpClient, private quoteService:QuoteRequestService, private router:Router) {
     this.goals = goalService.getGoals();
     this.alertServices = alertServices;
     
@@ -61,6 +66,7 @@ export class GoalComponent implements OnInit {
       this.quote = new Quote("Winston Churchill","Never never give up!")
       console.log("An error occurred")
   }) 
+ 
   }
 
 }

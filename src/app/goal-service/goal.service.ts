@@ -6,9 +6,20 @@ import { Goals } from '../goalList';
   providedIn: 'root'
 })
 export class GoalService {
+  goal!: Goal1;
+
 
   getGoals(){
     return Goals
+  }
+
+  getGoal(id: number){
+    for (let goal of Goals){
+      if (goal.id == id){
+        this.goal = goal
+      }
+    }
+    return this.goal;
   }
 
   constructor() { }
